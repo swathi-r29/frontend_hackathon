@@ -1,0 +1,344 @@
+/* Dark futuristic theme layer. Loaded after index.css; flips tokens, keeps yellow for actions and emphasis. */
+:root {
+  --y-primary: #F5D90A;
+  --y-warm: #FFE84A;
+  --p-deep: #160F2E;
+  --p-primary: #6D3BFF;
+  --p-accent: #8B5CFF;
+  --bg-main: #0B0914;
+  --bg-card: #151222;
+  --surface-2: #211A35;
+  --ink-main: #F8F7FC;
+  --ink-muted: #B8B2C8;
+  --ink-light: #9A93AD;
+  --border-light: #342B49;
+  --border-strong: #342B49;
+  --p-light: #2A2147;
+  --shadow-card: 0 14px 40px rgba(0, 0, 0, .4);
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--ink-main)
+}
+
+:focus-visible {
+  outline: 3px solid var(--y-warm);
+  outline-offset: 3px
+}
+
+.site-header {
+  background: rgba(11, 9, 20, .88);
+  border-bottom: 1px solid var(--border-light);
+  backdrop-filter: blur(10px)
+}
+
+.logo,
+.logo-text,
+.nav-link,
+.burger {
+  color: var(--ink-main)
+}
+
+.logo-badge {
+  background: var(--y-primary);
+  color: var(--p-deep)
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, .08)
+}
+
+.nav-pill-active {
+  background: var(--y-primary) !important;
+  color: var(--p-deep) !important;
+  border: 2px solid var(--border-strong) !important
+}
+
+.nav-dropdown-btn.nav-dropdown-open,
+.nav-dropdown-btn.active {
+  background: var(--y-primary) !important;
+  color: var(--p-deep) !important;
+  border: 2px solid var(--border-strong) !important
+}
+
+.nav-dropdown-menu {
+  background: #FFFDF8 !important;
+  border: 2.5px solid #14111D !important;
+  color: #14111D !important
+}
+
+.nav-dropdown-menu * {
+  color: #14111D
+}
+
+.nav-dropdown-menu .dropdown-subtitle-text {
+  color: #5E5870 !important
+}
+
+.nav-dropdown-menu .dropdown-section-heading {
+  color: #8C7300 !important
+}
+
+.nav-dropdown-menu .dropdown-circle-badge {
+  background: #FFFFFF !important;
+  border: 2px solid #14111D !important;
+  color: #14111D !important
+}
+
+.nav-dropdown-menu .dropdown-item-card:hover .dropdown-circle-badge {
+  background: #FEE715 !important
+}
+
+.nav-dropdown-menu .dropdown-item-card:hover {
+  background: #F6F1E3 !important
+}
+
+.nav-profile-btn {
+  border-color: var(--y-primary);
+  color: var(--y-primary)
+}
+
+.nav-profile-btn:hover {
+  background: rgba(245, 217, 10, .12)
+}
+
+.btn-dark-pill,
+.btn-dark-primary,
+.btn,
+.pricing-tag,
+.play-icon-circle {
+  background: var(--y-primary);
+  color: var(--p-deep);
+  border-color: var(--y-primary)
+}
+
+.btn-dark-pill:hover,
+.btn-dark-primary:hover,
+.btn:hover {
+  background: var(--y-warm);
+  color: var(--p-deep)
+}
+
+.btn.btn-outline,
+.btn-pill-subtle {
+  background: transparent;
+  color: var(--ink-main);
+  border-color: var(--ink-muted)
+}
+
+.btn.btn-outline:hover,
+.btn-pill-subtle:hover {
+  background: rgba(255, 255, 255, .08)
+}
+
+.nav-menu {
+  border-bottom-color: var(--border-light)
+}
+
+@media(max-width:860px) {
+  .nav-menu {
+    background: var(--bg-main)
+  }
+}
+
+/* hero */
+.hero-banner-sec {
+  background: radial-gradient(1100px 650px at 85% 30%, rgba(109, 59, 255, .35), transparent 75%), radial-gradient(800px 500px at 0% 0%, rgba(245, 217, 10, .08), transparent 70%), var(--bg-main);
+  color: var(--ink-main)
+}
+
+.hero-system-eyebrow {
+  color: var(--y-primary)
+}
+
+.hero-giant-heading {
+  color: var(--ink-main)
+}
+
+.text-purple {
+  color: var(--p-accent)
+}
+
+.underline-you,
+.accent-sparks {
+  color: var(--y-primary)
+}
+
+.hero-subtext,
+.pillar-text span {
+  color: var(--ink-muted)
+}
+
+.hero-category-list {
+  color: var(--ink-main)
+}
+
+.hero-category-list .cat-chip {
+  color: #C9BCF0
+}
+
+.hero-category-list .cat-chip:hover {
+  color: var(--y-primary);
+  background: rgba(139, 92, 255, .2)
+}
+
+.hero-value-pillars {
+  border-top-color: var(--border-light)
+}
+
+.pillar-divider {
+  background: var(--border-light)
+}
+
+.pillar-icon {
+  background: rgba(139, 92, 255, .15);
+  color: var(--y-primary)
+}
+
+.hero-video-wrapper {
+  border: 2px solid var(--p-accent);
+  background: #000;
+  box-shadow: 0 0 0 6px rgba(139, 92, 255, .15), 0 30px 80px rgba(109, 59, 255, .35)
+}
+
+.hero-video-stat-pill {
+  background: var(--y-primary);
+  color: var(--p-deep);
+  border: 0
+}
+
+.video-toggle {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .3);
+  background: rgba(11, 9, 20, .75);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center
+}
+
+.video-toggle:hover {
+  background: var(--p-primary)
+}
+
+/* sections */
+.sec-purple {
+  background: #160F2E
+}
+
+.sec-lavender {
+  background: var(--bg-card);
+  color: var(--ink-main)
+}
+
+.sec-warm {
+  background: var(--surface-2);
+  color: var(--ink-main)
+}
+
+.sec-yellow,
+.sec-yellow h1,
+.sec-yellow h2,
+.sec-yellow h3 {
+  color: var(--p-deep)
+}
+
+.sec-yellow .btn,
+.sec-yellow .btn-dark-pill {
+  background: var(--p-deep);
+  color: var(--y-primary);
+  border-color: var(--p-deep)
+}
+
+.sec-yellow .btn.btn-outline {
+  background: transparent;
+  color: var(--p-deep);
+  border-color: var(--p-deep)
+}
+
+.eyebrow {
+  color: var(--p-accent)
+}
+
+.sec-purple .eyebrow {
+  color: var(--y-primary)
+}
+
+.card-feature,
+.pricing-card,
+.table-wrap {
+  background: var(--bg-card);
+  border-color: var(--border-light);
+  color: var(--ink-main)
+}
+
+.card-feature:hover {
+  border-color: var(--y-primary);
+  box-shadow: 0 12px 0 rgba(245, 217, 10, .15)
+}
+
+.card-icon-wrap,
+.pricing-price {
+  color: var(--ink-main)
+}
+
+.card-icon-wrap {
+  border-color: var(--p-accent);
+  background: var(--surface-2)
+}
+
+.dk-table th {
+  color: var(--y-primary)
+}
+
+.site-footer {
+  background: #07050D
+}
+
+.hero-value-pillars svg {
+  color: var(--y-primary)
+}
+
+.pricing-card.popular {
+  background: var(--surface-2);
+  border-color: var(--y-primary);
+  box-shadow: 6px 6px 0 var(--p-primary)
+}
+
+.pricing-card.popular * {
+  color: inherit
+}
+
+.pricing-card.popular .pricing-tag {
+  color: var(--p-deep)
+}
+
+.pricing-card.popular .btn {
+  color: var(--p-deep)
+}
+
+.demo-note {
+  margin-top: 20px;
+  padding: 12px 16px;
+  border: 1px dashed var(--ink-light);
+  border-radius: 12px;
+  color: var(--ink-muted);
+  font-size: .9rem;
+  max-width: 460px
+}
+
+.dk-table td:last-child,
+.dk-table td:last-child * {
+  color: var(--y-primary)
+}
+
+.dk-table td:nth-child(n+2):not(:last-child) {
+  color: var(--ink-main)
+}
