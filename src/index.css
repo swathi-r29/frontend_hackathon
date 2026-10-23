@@ -630,34 +630,48 @@ a {
   gap: 12px;
   padding: 15px 28px;
   border-radius: var(--radius-pill);
-  background: transparent;
-  color: #14111D;
-  border: 2px solid #14111D;
+  background: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF !important;
+  border: 2px solid rgba(255, 255, 255, 0.35);
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-pill-subtle span {
+  color: #FFFFFF !important;
 }
 
 .btn-pill-subtle:hover {
-  background: rgba(20, 17, 29, 0.08);
+  background: rgba(245, 217, 10, 0.12) !important;
+  border-color: var(--y-primary) !important;
+  color: var(--y-primary) !important;
   transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(245, 217, 10, 0.25);
+}
+
+.btn-pill-subtle:hover span {
+  color: var(--y-primary) !important;
 }
 
 .play-icon-circle {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  background: #14111D;
-  display: flex;
+  background: var(--y-primary) !important;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   padding-left: 2px;
+  flex-shrink: 0;
 }
 
 .play-icon-circle svg {
-  fill: var(--y-primary);
+  fill: #14111D !important;
+  color: #14111D !important;
 }
 
 .hero-category-list {

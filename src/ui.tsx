@@ -47,6 +47,7 @@ export const Btn = ({
   disabled,
   type,
   icon = true,
+  style,
 }: {
   to?: string
   children: ReactNode
@@ -55,6 +56,7 @@ export const Btn = ({
   disabled?: boolean
   type?: 'button' | 'submit'
   icon?: boolean
+  style?: React.CSSProperties
 }) => {
   const content = (
     <>
@@ -64,11 +66,11 @@ export const Btn = ({
   )
 
   return to ? (
-    <Link to={to} className={`btn ${variant}`}>
+    <Link to={to} className={`btn ${variant}`} style={style}>
       {content}
     </Link>
   ) : (
-    <button type={type ?? 'button'} className={`btn ${variant}`} onClick={onClick} disabled={disabled}>
+    <button type={type ?? 'button'} className={`btn ${variant}`} onClick={onClick} disabled={disabled} style={style}>
       {content}
     </button>
   )

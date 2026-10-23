@@ -70,8 +70,8 @@ export default function Home() {
                   Enter Skill Mode
                 </Btn>
                 <Btn to="/hackathon" variant="btn-pill-subtle btn-hero-lg" icon={false}>
-                  <span>Explore the platform</span>
-                  <span className="play-icon-circle"><Play size={13} fill="#14111D" /></span>
+                  <span style={{ color: '#FFFFFF', fontWeight: 700, letterSpacing: '0.01em' }}>Explore the platform</span>
+                  <span className="play-icon-circle"><Play size={13} fill="#14111D" color="#14111D" /></span>
                 </Btn>
               </div>
 

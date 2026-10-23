@@ -105,31 +105,68 @@ body {
 
 .btn-dark-pill,
 .btn-dark-primary,
-.btn,
-.pricing-tag,
-.play-icon-circle {
+.btn:not(.btn-pill-subtle):not(.btn-outline),
+.pricing-tag {
   background: var(--y-primary);
   color: var(--p-deep);
-  border-color: var(--y-primary)
+  border-color: var(--y-primary);
 }
 
 .btn-dark-pill:hover,
 .btn-dark-primary:hover,
-.btn:hover {
+.btn:not(.btn-pill-subtle):not(.btn-outline):hover {
   background: var(--y-warm);
-  color: var(--p-deep)
+  color: var(--p-deep);
 }
 
 .btn.btn-outline,
-.btn-pill-subtle {
-  background: transparent;
-  color: var(--ink-main);
-  border-color: var(--ink-muted)
+.btn-pill-subtle,
+.btn.btn-pill-subtle,
+.hero-cta-group .btn-pill-subtle {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #FFFFFF !important;
+  border: 2px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+}
+
+.btn-pill-subtle span,
+.btn.btn-pill-subtle span,
+.hero-cta-group .btn-pill-subtle span {
+  color: #FFFFFF !important;
 }
 
 .btn.btn-outline:hover,
-.btn-pill-subtle:hover {
-  background: rgba(255, 255, 255, .08)
+.btn-pill-subtle:hover,
+.btn.btn-pill-subtle:hover,
+.hero-cta-group .btn-pill-subtle:hover {
+  background: rgba(245, 217, 10, 0.14) !important;
+  border-color: var(--y-primary) !important;
+  color: var(--y-primary) !important;
+  box-shadow: 0 0 22px rgba(245, 217, 10, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+.btn-pill-subtle:hover span,
+.btn.btn-pill-subtle:hover span,
+.hero-cta-group .btn-pill-subtle:hover span {
+  color: var(--y-primary) !important;
+}
+
+.play-icon-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--y-primary) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 6px;
+}
+
+.play-icon-circle svg {
+  fill: #14111D !important;
+  color: #14111D !important;
 }
 
 .nav-menu {
