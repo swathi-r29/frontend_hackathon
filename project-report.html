@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DKODER Platform Redesign - Project Report & Abstract</title>
+  <style>
+    :root {
+      --bg: #0B0914;
+      --card-bg: #151222;
+      --yellow: #F5D90A;
+      --purple: #8B5CFF;
+      --text: #F8F7FC;
+      --text-muted: #B8B2C8;
+      --border: #342B49;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 48px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+    .header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .badge {
+      background: var(--yellow);
+      color: #160F2E;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+    .meta-box {
+      background: rgba(139, 92, 255, 0.1);
+      border: 1px solid rgba(139, 92, 255, 0.3);
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin: 24px 0 36px 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      font-size: 0.95rem;
+    }
+    .meta-item b {
+      color: var(--yellow);
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .meta-item a {
+      color: #FFFFFF;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+    h2 {
+      font-size: 1.35rem;
+      color: var(--yellow);
+      margin: 32px 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    p {
+      margin-bottom: 16px;
+      color: #DDD8EB;
+    }
+    ul {
+      margin: 0 0 20px 24px;
+      color: #DDD8EB;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .card h3 {
+      font-size: 1.05rem;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.95rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      text-align: left;
+    }
+    th {
+      background: rgba(139, 92, 255, 0.15);
+      color: var(--yellow);
+    }
+    .print-bar {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-print {
+      background: var(--yellow);
+      color: #160F2E;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: transform 0.2s;
+    }
+    .btn-print:hover {
+      transform: translateY(-2px);
+    }
+    @media print {
+      body { background: #FFFFFF; color: #111111; padding: 0; }
+      .container { border: none; box-shadow: none; padding: 0; max-width: 100%; background: #FFFFFF; }
+      .print-bar { display: none; }
+      .badge { background: #111111; color: #FFFFFF; }
+      h1, h2, h3 { color: #111111 !important; }
+      .meta-box { background: #F5F5F5; border-color: #DDD; }
+      .meta-item b { color: #333333; }
+      .meta-item a { color: #0066CC; }
+      .card { background: #FAFAFA; border-color: #EEE; }
+      th { background: #EEEEEE; color: #111111; }
+      p, li { color: #333333 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div>
+        <span class="badge">Frontend Hackathon Submission</span>
+        <h1>DKODER Platform Redesign</h1>
+        <div class="subtitle">Next-Generation Engineering Placement LMS & Hackathon Ecosystem</div>
+      </div>
+    </div>
+
+    <div class="meta-box">
+      <div class="meta-item">
+        <b>Repository Link</b>
+        <a href="https://github.com/swathi-r29/frontend_hackathon" target="_blank">github.com/swathi-r29/frontend_hackathon</a>
+      </div>
+      <div class="meta-item">
+        <b>Core Tech Stack</b>
+        <span>React 18, TypeScript, Vite, CSS Tokens</span>
+      </div>
+      <div class="meta-item">
+        <b>Target Domain</b>
+        <span>EdTech, Campus Placements, Competitive Programming</span>
+      </div>
+      <div class="meta-item">
+        <b>Status</b>
+        <span style="color:#22C55E; font-weight:700;">Completed & Deployed to Git</span>
+      </div>
+    </div>
+
+    <h2>1. Executive Abstract</h2>
+    <p>
+      Engineering students across universities face fragmented preparation tools when transitioning from academics to high-paying software engineering careers. The existing DKODER web interface (dkoder.co.in), while conceptually sound, suffered from low visual contrast, rigid layouts, and an absence of interactive feedback mechanisms.
+    </p>
+    <p>
+      This project delivers a <strong>production-grade frontend redesign of the DKODER ecosystem</strong>. Crafted with a sleek obsidian dark theme punctuated by DKODER's signature high-visibility yellow (<code>#FEE715</code> / <code>#F5D90A</code>), the revamped platform unifies:
+    </p>
+    <ul>
+      <li><strong>Immersive Homepage:</strong> High-impact hero typography, category breadcrumbs, dual CTA triggers, and interactive video-curriculum preview decks.</li>
+      <li><strong>Interactive Learning Suite:</strong> Topic-wise coding challenges, company preparation paths (Google, Amazon, TCS), and mock tests with real-time code execution simulations.</li>
+      <li><strong>Certification & Testing Engine:</strong> Timed MCQ skill evaluations with automated scoring and dynamic, verifiable digital credential generation.</li>
+      <li><strong>Competitive Hackathon Arena:</strong> Real-time tournament countdown timer, 4 challenge domain cards, and interactive team registration modals.</li>
+      <li><strong>Institutional University Portal:</strong> Placement analytics and an interactive MOU application workflow for college administrations.</li>
+    </ul>
+
+    <h2>2. Key Functional Modules</h2>
+    <div class="grid-cards">
+      <div class="card">
+        <h3>Interactive Learn Hub</h3>
+        <p>Interactive coding questions with difficulty badges, compiler simulation with C++/Python/Java syntax support, and live stdout output.</p>
+      </div>
+      <div class="card">
+        <h3>Automated Certification</h3>
+        <p>Built-in 5-question timed technical assessment. Instant score calculation with downloadable digital certificate for scores &ge; 70%.</p>
+      </div>
+      <div class="card">
+        <h3>Hackathon Arena</h3>
+        <p>Grand Tournament deck with 2-column hero, live countdown clocks, challenge domain selector, and interactive registration modals.</p>
+      </div>
+      <div class="card">
+        <h3>University Partnerships (MOU)</h3>
+        <p>Comprehensive college placement statistics, institutional perks, and a step-by-step MOU application form with feedback validation.</p>
+      </div>
+    </div>
+
+    <h2>3. Architecture & Technology Stack</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Technology</th>
+          <th>Implementation Highlights</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Framework</strong></td>
+          <td>React 18 + Vite</td>
+          <td>Modular component structure, fast hot module replacement, 6.49s build speed.</td>
+        </tr>
+        <tr>
+          <td><strong>Language</strong></td>
+          <td>TypeScript</td>
+          <td>Strict typing across navigation, assessment state, and modal controllers.</td>
+        </tr>
+        <tr>
+          <td><strong>Styling</strong></td>
+          <td>Modular Vanilla CSS</td>
+          <td>Custom design tokens, dark-mode variables, glassmorphic blur, 100% WCAG contrast.</td>
+        </tr>
+        <tr>
+          <td><strong>Interactivity</strong></td>
+          <td>Lucide React + Framer</td>
+          <td>Micro-animations on hover, smooth modal dialog transitions, responsive layouts.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4. Key Improvements Over Original Platform</h2>
+    <ul>
+      <li><strong>High-Contrast Typography:</strong> Replaced low-contrast dark buttons with crisp white and gold interactive states for optimal legibility.</li>
+      <li><strong>Client-Side Interactivity:</strong> Added functional assessment tests, code output simulation, and interactive registration flows rather than static brochure pages.</li>
+      <li><strong>University Focus:</strong> Created dedicated corporate and college outreach pages to bridge placement cell requirements.</li>
+    </ul>
+
+    <div class="print-bar">
+      <span style="font-size:0.85rem; color:var(--text-muted);">DKODER Redesign &bull; Frontend Hackathon 2026</span>
+      <button class="btn-print" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+  </div>
+
+</body>
+</html>
